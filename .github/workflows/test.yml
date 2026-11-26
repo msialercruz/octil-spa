@@ -1,0 +1,22 @@
+# created with "Node.js By GitHub Actions"
+name: Run Tests
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js 26.13.1
+      uses: actions/setup-node@v4
+      with:
+        node-version: 26.13.1
+        cache: 'npm'
+    - run: npm ci
+    - run: npm test
