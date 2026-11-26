@@ -1,0 +1,16 @@
+services:
+    octil-spa:
+        container_name: octil-spa
+        image: node:26.13.1-alpine
+        hostname: pagila-client
+        ports:
+            - 4200:4200
+        working_dir: /home/node/app
+        user: 1000:1000
+        volumes:
+            - './:/home/node/app'
+        entrypoint: ['/bin/sh', '-c']
+        command:
+            - |
+                npm install
+                npm start -- --host=0.0.0.0
