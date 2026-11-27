@@ -10,10 +10,10 @@ on:
       - completed
 
 env:
-  PROJECT_ID: ${{ secrets.PROJECT_ID }}
-  GAR_LOCATION: ${{ secrets.GAR_LOCATION }}
-  REPOSITORY: ${{ secrets.REPOSITORY }}
-  IMAGE: ${{ secrets.OCTILSPA_IMAGE }}
+  PROJECT_ID: ${{ vars.PROJECT_ID }}
+  GAR_LOCATION: ${{ vars.GAR_LOCATION }}
+  REPOSITORY: ${{ vars.REPOSITORY }}
+  IMAGE: ${{ vars.OCTILSPA_IMAGE }}
   WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
 
 jobs:
