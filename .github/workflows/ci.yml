@@ -1,5 +1,4 @@
 # based on "Build and Deploy to GKE By Google Cloud"
-
 name: 'Build and Publish to GAR'
 
 on:
