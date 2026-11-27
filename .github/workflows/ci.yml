@@ -13,7 +13,7 @@ env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   GAR_LOCATION: ${{ secrets.GAR_LOCATION }}
   REPOSITORY: ${{ vars.REPOSITORY }}
-  IMAGE: ${{ secrets.REPOSITORY }}
+  IMAGE: ${{ secrets.OCTISPA_IMAGE }}
   WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
 
 jobs:
