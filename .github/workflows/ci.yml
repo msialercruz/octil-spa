@@ -12,7 +12,7 @@ on:
 env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   GAR_LOCATION: ${{ secrets.GAR_LOCATION }}
-  REPOSITORY: ${{ secrets.REPOSITORY }}
+  REPOSITORY: ${{ vars.REPOSITORY }}
   IMAGE: ${{ secrets.REPOSITORY }}
   WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
 
