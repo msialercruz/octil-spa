@@ -3,7 +3,7 @@ name: 'Build and Publish to GAR'
 
 on:
   workflow_run:
-    # workflows: ["Run Tests"]
+    workflows: ["Run Tests"]
     branches: [master]
     types:
       - completed
