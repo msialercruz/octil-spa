@@ -13,7 +13,6 @@ env:
   GAR_LOCATION: ${{ vars.GAR_LOCATION }}
   REPOSITORY: ${{ vars.REPOSITORY }}
   IMAGE: ${{ vars.OCTILSPA_IMAGE }}
-  SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
   WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
 
 jobs:
@@ -37,7 +36,6 @@ jobs:
         with:
           workload_identity_provider: '${{ env.WORKLOAD_IDENTITY_PROVIDER }}'
           project_id: '${{ env.PROJECT_ID }}'
-          service_account: '${{ env.SERVICE_ACCOUNT }}'
           
       - name: 'Temp'
         run: |-
