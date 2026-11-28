@@ -46,7 +46,7 @@ jobs:
                     
       - name: 'Temp'
         run: |-
-          cat ~/.docker/config.json  | jq -r '.auths."northamerica-northeast1-docker.pkg.dev".auth' | base64 -d | head -c11
+          cat ~/.docker/config.json  | jq -r '.auths."northamerica-northeast1-docker.pkg.dev".auth' | base64 -d | head -c18
 
       - name: 'Build and push Docker container'
         run: |-
