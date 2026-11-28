@@ -46,16 +46,16 @@ jobs:
                     
       - name: 'Temp'
         run: |-
-          cat ~/.docker/config.json  | jq -r '.auths."northamerica-northeast1-docker.pkg.dev".auth' | base64 -d | head -c30
+          cat /home/runner/work/octil-spa/octil-spa/gha-creds-3e15eac2de1c3ff9.json | head -c20
 
-      - name: 'Build and push Docker container'
-        run: |-
-          DOCKER_TAG="${GAR_LOCATION}-docker.pkg.dev/${PROJECT_ID}/${REPOSITORY}/${IMAGE}:${GITHUB_SHA}"
+      # - name: 'Build and push Docker container'
+      #   run: |-
+      #     DOCKER_TAG="${GAR_LOCATION}-docker.pkg.dev/${PROJECT_ID}/${REPOSITORY}/${IMAGE}:${GITHUB_SHA}"
 
-          docker build \
-            --tag "${DOCKER_TAG}" \
-            --build-arg GITHUB_SHA="${GITHUB_SHA}" \
-            --build-arg GITHUB_REF="${GITHUB_REF}" \
-            .
+      #     docker build \
+      #       --tag "${DOCKER_TAG}" \
+      #       --build-arg GITHUB_SHA="${GITHUB_SHA}" \
+      #       --build-arg GITHUB_REF="${GITHUB_REF}" \
+      #       .
 
-          docker push "${DOCKER_TAG}"
+      #     docker push "${DOCKER_TAG}"
