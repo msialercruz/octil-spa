@@ -36,10 +36,6 @@ jobs:
         with:
           workload_identity_provider: '${{ env.WORKLOAD_IDENTITY_PROVIDER }}'
           project_id: '${{ env.PROJECT_ID }}'
-          
-      - name: 'Temp'
-        run: |-
-          gcloud auth list
 
       - name: 'Docker Auth'
         uses: 'docker/login-action@v3'
@@ -47,6 +43,10 @@ jobs:
           username: 'oauth2accesstoken'
           password: '${{ steps.auth.outputs.auth_token }}'
           registry: '${{ env.GAR_LOCATION }}-docker.pkg.dev'
+                    
+      - name: 'Temp'
+        run: |-
+          cat ~/.docker/config.json  | jq -r '.auths."northamerica-northeast1-docker.pkg.dev".auth' | base64 -d | tail -c+11 | jq '.client_email'
 
       - name: 'Build and push Docker container'
         run: |-
